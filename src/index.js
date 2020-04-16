@@ -1,7 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
+
+app.use(authRoutes);
 
 const mongoUri = 'mongodb+srv://seabassgonzalez:gunitsa5@clusterduck-pp2lr.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoUri, {
